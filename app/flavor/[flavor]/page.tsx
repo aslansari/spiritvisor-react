@@ -1,13 +1,14 @@
 import Image from "next/image";
 import { flavors } from "@/app/lib/placeholder-data.js";
+import { Cocktail } from "@/app/lib/definition";
 
 export default function Page(
     { params }: { params: { flavor: string; } }
 ) {
     const flavor = params.flavor;
-    const flavorData = flavors[flavor || 'sour'];
-    const random = Math.floor(Math.random() * flavorData.length);
-    const cocktail = flavorData[random];
+    const flavorData = flavors.find((f) => f.type === flavor)?.cocktails;
+    const random: number = Math.floor(Math.random() * (flavorData?.length || 0)) || 0;
+    const cocktail = flavorData?.[random] || {} as Cocktail;
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
 
@@ -18,7 +19,7 @@ export default function Page(
                         className="rounded-lg mt-4"
                         alt={`${cocktail.title} picture`}
                         width={200}
-                        height={200}
+                        height={250}
                     />
                 </div>
                 <div>
