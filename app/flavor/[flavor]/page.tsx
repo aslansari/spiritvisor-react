@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { flavors } from "@/app/lib/placeholder-data.js";
 import { useRouter } from 'next/navigation';
+import { Chip } from "@/app/ui/chips";
 
 export default function Page(
     { params }: { params: { flavor: string; } }
@@ -15,6 +16,7 @@ export default function Page(
         title: "No cocktails found",
         description: "No cocktails found",
         imageUrl: "/placeholder.jpg",
+        ingredients: [""],
     };
 
     return (
@@ -33,7 +35,12 @@ export default function Page(
                     <h5 className="text-4xl font-bold pt-4">{cocktail.title}</h5>
                     <h5 className="text-base font-normal pt-4">{cocktail.description}</h5>
                 </div>
-                <div className="flex flex-row items-center justify-center p-12">
+                <div className="flex flex-row items-center justify-center space-x-1 mt-4">
+                        {cocktail.ingredients.map((ingredient) => (
+                            <Chip key={ingredient} title={ingredient} />
+                        ))}
+                </div>
+                <div className="flex flex-row items-center justify-center p-8">
                     <button className="px-4 py-2 me-4 text-white bg-blue-500 hover:bg-blue-600 rounded-lg" >
                         <a href="/">Change Flavor</a>
                     </button>
