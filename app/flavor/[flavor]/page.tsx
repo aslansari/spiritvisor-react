@@ -20,8 +20,8 @@ export default function Page(
     };
 
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24">
-            <div className="mb-32 grid items-center text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
+        <main className="flex min-h-screen flex-col items-center justify-between p-12">
+            <div className="mb-32 grid items-center justify-center text-center lg:max-w-5xl ">
                 <div className="justify-self-center">
                     <Image
                         src={cocktail.imageUrl}
@@ -36,9 +36,9 @@ export default function Page(
                     <h5 className="text-base font-normal pt-4">{cocktail.description}</h5>
                 </div>
                 <div className="flex flex-row items-center justify-center space-x-1 mt-4">
-                        {cocktail.ingredients.map((ingredient) => (
-                            <Chip key={ingredient} title={ingredient} />
-                        ))}
+                    {cocktail.ingredients.map((ingredient) => (
+                        <Chip key={ingredient} title={ingredient} />
+                    ))}
                 </div>
                 <div className="flex flex-row items-center justify-center p-8">
                     <button className="px-4 py-2 me-4 text-white bg-blue-500 hover:bg-blue-600 rounded-lg" >
@@ -54,6 +54,9 @@ export default function Page(
                         <a>Suggest Another</a>
                     </button>
                 </div>
+            </div>
+            <div>
+                <p className="text-center text-sm text-gray-500">Created by Aslan with ♥️</p>
             </div>
         </main>
     );
