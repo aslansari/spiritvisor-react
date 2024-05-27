@@ -11,16 +11,17 @@ export default function Home() {
           <p className="text-xl mt-4">select a flavor and see which cocktail the app suggests</p>
         </div>
         <div className="border grid grid-cols-3 gap-4 mt-8 justify-between">
-          <FlavorButton params={ { id:'bitter', title:'Bitter' }} />
-          <FlavorButton params={ { id:'sour', title:'Sour' }} />
-          <FlavorButton params={ { id:'sweet', title:'Sweet' }} />
-          <FlavorButton params={ { id:'savory', title:'Savory' }} />
-          <FlavorButton params={ { id:'herbal', title:'Herbal' }} />
-          <FlavorButton params={ { id:'fruity', title:'Fruity' }} />
+          <FlavorButton params={{ id: 'bitter', title: 'Bitter' }} />
+          <FlavorButton params={{ id: 'sour', title: 'Sour' }} />
+          <FlavorButton params={{ id: 'sweet', title: 'Sweet' }} />
+          <FlavorButton params={{ id: 'savory', title: 'Savory' }} />
+          <FlavorButton params={{ id: 'herbal', title: 'Herbal' }} />
+          <FlavorButton params={{ id: 'fruity', title: 'Fruity' }} />
         </div>
       </div>
-      <div>
-        <p className="text-center text-sm text-gray-500">Created by Aslan with ♥️</p>
+      <div className="flex flex-row items-center">
+        <p className="text-center text-sm text-gray-500">created by <a className="text-gray-900 font-medium"> Aslan </a> with ️</p>
+        <Image src="/heart-sharp.svg" alt="Heart Logo" width={16} height={16} />
       </div>
     </main>
   );

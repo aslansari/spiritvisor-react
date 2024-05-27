@@ -55,8 +55,9 @@ export default function Page(
                     </button>
                 </div>
             </div>
-            <div>
-                <p className="text-center text-sm text-gray-500">Created by Aslan with ♥️</p>
+            <div className="flex flex-row items-center">
+                <p className="text-center text-sm text-gray-500">created by <a className="text-gray-900 font-medium"> Aslan </a> with ️</p>
+                <Image src="/heart-sharp.svg" alt="Heart Logo" width={16} height={16} />
             </div>
         </main>
     );
