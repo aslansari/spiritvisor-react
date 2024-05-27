@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { FlavorButton } from "./ui/buttons";
+import { Credit } from "@/app/ui/credit";
 
 export default function Home() {
   return (
@@ -19,10 +20,7 @@ export default function Home() {
           <FlavorButton params={{ id: 'fruity', title: 'Fruity' }} />
         </div>
       </div>
-      <div className="flex flex-row items-center">
-        <p className="text-center text-sm text-gray-500">created by <a className="text-gray-900 font-medium"> Aslan </a> with ️</p>
-        <Image src="/heart-sharp.svg" alt="Heart Logo" width={16} height={16} />
-      </div>
+      <Credit />
     </main>
   );
 }
