@@ -20,6 +20,24 @@ const nextConfig = {
             port: '',
             pathname: '/_next/**',
           },
+          {
+            protocol: 'https',
+            hostname: 'mintandtwist.com',
+            port: '',
+            pathname: '/**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'www.acouplecooks.com',
+            port: '',
+            pathname: '/**',
+          },
+          {
+            protocol: 'https',
+            hostname: 'i0.wp.com',
+            port: '',
+            pathname: '/**',
+          },
         ],
       },
 };

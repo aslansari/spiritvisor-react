@@ -19,7 +19,6 @@ export default function Page(
 
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24">
-
             <div className="mb-32 grid items-center text-center lg:mb-0 lg:w-full lg:max-w-5xl lg:grid-cols-4 lg:text-left">
                 <div className="justify-self-center">
                     <Image
@@ -34,12 +33,12 @@ export default function Page(
                     <h5 className="text-4xl font-bold pt-4">{cocktail.title}</h5>
                     <h5 className="text-base font-normal pt-4">{cocktail.description}</h5>
                 </div>
-                <div>
-                    <button className="px-4 py-2 mt-8 me-4 text-white bg-blue-500 hover:bg-blue-600 rounded-lg" >
+                <div className="flex flex-row items-center justify-center p-12">
+                    <button className="px-4 py-2 me-4 text-white bg-blue-500 hover:bg-blue-600 rounded-lg" >
                         <a href="/">Change Flavor</a>
                     </button>
                     <button
-                        className="px-4 py-2 mt-8 text-white bg-blue-500 hover:bg-blue-600 rounded-lg"
+                        className="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg"
                         onClick={
                             // Attempt to recover by trying to re-render the invoices route
                             () => reload.refresh()
