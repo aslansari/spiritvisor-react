@@ -11,7 +11,7 @@ export default function Home() {
           <h1 className="text-4xl font-bold">Spiritvisor</h1>
           <p className="text-xl mt-4">select a flavor and see which cocktail the app suggests</p>
         </div>
-        <div className="border grid grid-cols-3 gap-4 mt-8 justify-between">
+        <div className="grid grid-cols-3 gap-4 mt-8 justify-between">
           <FlavorButton params={{ id: 'bitter', title: 'Bitter' }} />
           <FlavorButton params={{ id: 'sour', title: 'Sour' }} />
           <FlavorButton params={{ id: 'sweet', title: 'Sweet' }} />
