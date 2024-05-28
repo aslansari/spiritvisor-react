@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import { Chip } from "@/app/ui/chips";
 import { Credit } from "@/app/ui/credit";
 import { Suspense } from "react";
+import Link from "next/link";
 
 export default function Page(
     { params }: { params: { flavor: string; } }
@@ -43,12 +44,14 @@ export default function Page(
                         <Chip key={ingredient} title={ingredient} />
                     ))}
                 </div>
-                <div className="flex flex-row items-center justify-center p-8">
-                    <button className="px-4 py-2 me-4 text-white bg-blue-500 hover:bg-blue-600 rounded-lg" >
-                        <a href="/">Change Flavor</a>
-                    </button>
+                <div className="flex flex-row gap-4 items-center justify-center p-8">
+                    <Link href="/" className="btn btn-outline" >
+                        <button>
+                            Change Flavor
+                        </button>
+                    </Link>
                     <button
-                        className="px-4 py-2 text-white bg-blue-500 hover:bg-blue-600 rounded-lg"
+                        className="btn btn-primary text-white"
                         onClick={
                             // Attempt to recover by trying to re-render the invoices route
                             () => reload.refresh()
@@ -79,5 +82,5 @@ const shimmer = (w: number, h: number, color: string) => `
 
 const toBase64 = (str: string) =>
     typeof window === "undefined"
-      ? Buffer.from(str).toString("base64")
-      : window.btoa(str);
+        ? Buffer.from(str).toString("base64")
+        : window.btoa(str);
