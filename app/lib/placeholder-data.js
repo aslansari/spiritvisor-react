@@ -30,7 +30,7 @@ const flavors = [
                 },
                 {
                     title: "Trinidad Sour",
-                    imageUrl: "/cocktail/trinidad-sour.webp",
+                    imageUrl: "/cocktail/trinidad-sour.jpeg",
                     description: "A bitter and refreshing cocktail with a notable punch from the rye whiskey.",
                     ingredients: [
                         "Angostura bitters",

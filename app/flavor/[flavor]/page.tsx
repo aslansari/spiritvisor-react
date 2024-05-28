@@ -38,7 +38,7 @@ export default function Page(
                     <h5 className="text-4xl font-bold pt-4">{cocktail.title}</h5>
                     <h5 className="text-base font-normal pt-4">{cocktail.description}</h5>
                 </div>
-                <div className="flex flex-row items-center justify-center space-x-1 mt-4">
+                <div className="flex-wrap gap-2 items-center justify-center space-x-1 space-y-2 mt-4">
                     {cocktail.ingredients.map((ingredient) => (
                         <Chip key={ingredient} title={ingredient} />
                     ))}
