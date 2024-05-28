@@ -5,6 +5,7 @@ import { flavors } from "@/app/lib/placeholder-data.js";
 import { useRouter } from 'next/navigation';
 import { Chip } from "@/app/ui/chips";
 import { Credit } from "@/app/ui/credit";
+import { Suspense } from "react";
 
 export default function Page(
     { params }: { params: { flavor: string; } }
@@ -27,6 +28,7 @@ export default function Page(
                     <Image
                         src={cocktail.imageUrl}
                         className="rounded-lg mt-4"
+                        placeholder={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475, '#f3f4f6'))}`}
                         alt={`${cocktail.title} picture`}
                         width={200}
                         height={250}
@@ -60,3 +62,22 @@ export default function Page(
         </main>
     );
 }
+
+const shimmer = (w: number, h: number, color: string) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="${color}" offset="20%" />
+      <stop stop-color="#FFFFFF" offset="50%" />
+      <stop stop-color="${color}" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="${color}" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str: string) =>
+    typeof window === "undefined"
+      ? Buffer.from(str).toString("base64")
+      : window.btoa(str);
